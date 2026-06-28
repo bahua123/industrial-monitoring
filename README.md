@@ -18,7 +18,7 @@ InfluxDB v1 (时序数据库) :8086
     │     ├── datacenter_cooling    ← 数据中心冷却（5种策略）
     │     └── transformer_oil       ← 电力变压器油温（m1/m2双区域）
     │
-    ├── Grafana (可视化) :3001       ← grafana.bahua.de
+    ├── Grafana (可视化) :3001       ← http://localhost:3001
     │
     └── Hermes Anomaly Detector (Cron)
           └── 异常推送 → Telegram / 微信
@@ -34,7 +34,7 @@ InfluxDB v1 (时序数据库) :8086
 ## 仪表盘
 
 **数据中心冷源监控大屏**
-访问：http://grafana.bahua.de （admin/admin）
+访问：http://localhost:3001 （默认 admin/admin）
 
 包含面板：
 - 4 统计卡片（平均/最高/最低温度、数据总量）
