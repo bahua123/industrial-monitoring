@@ -1,0 +1,853 @@
+{
+  "id": 3698833953484800,
+  "panels": [
+    {
+      "datasource": {
+        "type": "influxdb",
+        "uid": "bfqa6sfx2lwxsa"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "decimals": 1,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "orange",
+                "value": 30
+              },
+              {
+                "color": "red",
+                "value": 40
+              }
+            ]
+          },
+          "unit": "celsius"
+        }
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 3,
+        "x": 0,
+        "y": 0
+      },
+      "id": 1,
+      "targets": [
+        {
+          "query": "SELECT MEAN(inlet_temp) AS mean_temp FROM datacenter_cooling",
+          "rawQuery": true
+        }
+      ],
+      "title": "平均入风温度",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "influxdb",
+        "uid": "bfqa6sfx2lwxsa"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "decimals": 1,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "orange",
+                "value": 35
+              },
+              {
+                "color": "red",
+                "value": 45
+              }
+            ]
+          },
+          "unit": "celsius"
+        }
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 3,
+        "x": 3,
+        "y": 0
+      },
+      "id": 2,
+      "targets": [
+        {
+          "query": "SELECT MAX(inlet_temp) AS max_temp FROM datacenter_cooling",
+          "rawQuery": true
+        }
+      ],
+      "title": "最高入风温度",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "influxdb",
+        "uid": "bfqa6sfx2lwxsa"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "decimals": 1,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "yellow",
+                "value": 100
+              },
+              {
+                "color": "red",
+                "value": 150
+              }
+            ]
+          },
+          "unit": "currencyUSD"
+        }
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 3,
+        "x": 6,
+        "y": 0
+      },
+      "id": 3,
+      "targets": [
+        {
+          "query": "SELECT MEAN(energy_cost) AS mean_cost FROM datacenter_cooling",
+          "rawQuery": true
+        }
+      ],
+      "title": "平均能耗成本",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "influxdb",
+        "uid": "bfqa6sfx2lwxsa"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "blue",
+            "mode": "fixed"
+          },
+          "decimals": 0
+        }
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 3,
+        "x": 9,
+        "y": 0
+      },
+      "id": 4,
+      "targets": [
+        {
+          "query": "SELECT count(inlet_temp) AS total FROM datacenter_cooling",
+          "rawQuery": true
+        }
+      ],
+      "title": "数据总量",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "influxdb",
+        "uid": "bfqa6sfx2lwxsa"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "lineInterpolation": "smooth",
+            "showPoints": "never"
+          },
+          "unit": "celsius"
+        }
+      },
+      "gridPos": {
+        "h": 10,
+        "w": 12,
+        "x": 0,
+        "y": 4
+      },
+      "id": 5,
+      "options": {
+        "legend": {
+          "calcs": [
+            "mean",
+            "max",
+            "min"
+          ],
+          "displayMode": "table",
+          "placement": "bottom"
+        }
+      },
+      "targets": [
+        {
+          "query": "SELECT inlet_temp FROM datacenter_cooling",
+          "rawQuery": true
+        },
+        {
+          "query": "SELECT outlet_temp FROM datacenter_cooling",
+          "rawQuery": true
+        },
+        {
+          "query": "SELECT ambient_temp FROM datacenter_cooling",
+          "rawQuery": true
+        }
+      ],
+      "title": "温度趋势（入风/出风/环境）",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "influxdb",
+        "uid": "bfqa6sfx2lwxsa"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "fillOpacity": 30,
+            "lineInterpolation": "smooth",
+            "showPoints": "never"
+          },
+          "unit": "currencyUSD"
+        }
+      },
+      "gridPos": {
+        "h": 10,
+        "w": 6,
+        "x": 12,
+        "y": 4
+      },
+      "id": 6,
+      "options": {
+        "legend": {
+          "calcs": [
+            "mean",
+            "max",
+            "min"
+          ],
+          "displayMode": "table",
+          "placement": "bottom"
+        }
+      },
+      "targets": [
+        {
+          "query": "SELECT energy_cost FROM datacenter_cooling",
+          "rawQuery": true
+        }
+      ],
+      "title": "能耗成本趋势",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "influxdb",
+        "uid": "bfqa6sfx2lwxsa"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "lineInterpolation": "smooth",
+            "showPoints": "never"
+          }
+        }
+      },
+      "gridPos": {
+        "h": 10,
+        "w": 6,
+        "x": 18,
+        "y": 4
+      },
+      "id": 7,
+      "options": {
+        "legend": {
+          "calcs": [
+            "mean",
+            "max",
+            "min"
+          ],
+          "displayMode": "table",
+          "placement": "bottom"
+        }
+      },
+      "targets": [
+        {
+          "query": "SELECT server_workload FROM datacenter_cooling",
+          "rawQuery": true
+        },
+        {
+          "query": "SELECT cooling_power_kw FROM datacenter_cooling",
+          "rawQuery": true
+        }
+      ],
+      "title": "服务器负载与冷却功率",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "influxdb",
+        "uid": "bfqa6sfx2lwxsa"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "fillOpacity": 20,
+            "lineInterpolation": "smooth",
+            "showPoints": "never"
+          },
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "orange",
+                "value": 2
+              },
+              {
+                "color": "red",
+                "value": 4
+              }
+            ]
+          },
+          "unit": "celsius"
+        }
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 14
+      },
+      "id": 8,
+      "options": {
+        "legend": {
+          "calcs": [
+            "mean",
+            "max",
+            "min"
+          ],
+          "displayMode": "table",
+          "placement": "bottom"
+        }
+      },
+      "targets": [
+        {
+          "query": "SELECT temp_deviation FROM datacenter_cooling",
+          "rawQuery": true
+        }
+      ],
+      "title": "温度偏差监控（异常标记）",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "influxdb",
+        "uid": "bfqa6sfx2lwxsa"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "align": "left"
+          }
+        }
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 14
+      },
+      "id": 9,
+      "targets": [
+        {
+          "query": "SELECT time, strategy, inlet_temp, outlet_temp, temp_deviation, energy_cost FROM datacenter_cooling WHERE temp_deviation > 3 ORDER BY time DESC LIMIT 20",
+          "rawQuery": true
+        }
+      ],
+      "title": "最近异常事件（温度偏差 > 3°C）",
+      "type": "table"
+    },
+    {
+      "datasource": {
+        "type": "influxdb",
+        "uid": "bfqa6sfx2lwxsa"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "yellow",
+                "value": 30
+              },
+              {
+                "color": "red",
+                "value": 38
+              }
+            ]
+          },
+          "unit": "celsius"
+        }
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 8,
+        "x": 0,
+        "y": 22
+      },
+      "id": 10,
+      "targets": [
+        {
+          "query": "SELECT MEAN(inlet_temp) FROM datacenter_cooling GROUP BY strategy",
+          "rawQuery": true
+        }
+      ],
+      "title": "各冷却策略平均温度对比",
+      "type": "bargauge"
+    },
+    {
+      "datasource": {
+        "type": "influxdb",
+        "uid": "bfqa6sfx2lwxsa"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "yellow",
+                "value": 100
+              },
+              {
+                "color": "red",
+                "value": 130
+              }
+            ]
+          },
+          "unit": "currencyUSD"
+        }
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 8,
+        "x": 8,
+        "y": 22
+      },
+      "id": 11,
+      "targets": [
+        {
+          "query": "SELECT MEAN(energy_cost) FROM datacenter_cooling GROUP BY strategy",
+          "rawQuery": true
+        }
+      ],
+      "title": "各冷却策略平均能耗对比",
+      "type": "bargauge"
+    },
+    {
+      "datasource": {
+        "type": "influxdb",
+        "uid": "bfqa6sfx2lwxsa"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "yellow",
+                "value": 60
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "percent"
+        }
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 8,
+        "x": 16,
+        "y": 22
+      },
+      "id": 12,
+      "targets": [
+        {
+          "query": "SELECT MEAN(cooling_power_kw) FROM datacenter_cooling GROUP BY strategy",
+          "rawQuery": true
+        }
+      ],
+      "title": "各策略冷却单元功率",
+      "type": "bargauge"
+    },
+    {
+      "datasource": {
+        "type": "influxdb",
+        "uid": "bfqa6sfx2lwxsa"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "decimals": 1,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "orange",
+                "value": 30
+              },
+              {
+                "color": "red",
+                "value": 45
+              }
+            ]
+          },
+          "unit": "celsius"
+        }
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 3,
+        "x": 0,
+        "y": 30
+      },
+      "id": null,
+      "targets": [
+        {
+          "format": "time_series",
+          "query": "SELECT MEAN(OT) FROM transformer_oil",
+          "rawQuery": true
+        }
+      ],
+      "title": "平均油温",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "influxdb",
+        "uid": "bfqa6sfx2lwxsa"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "decimals": 1,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "orange",
+                "value": 40
+              },
+              {
+                "color": "red",
+                "value": 50
+              }
+            ]
+          },
+          "unit": "celsius"
+        }
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 3,
+        "x": 3,
+        "y": 30
+      },
+      "id": null,
+      "targets": [
+        {
+          "format": "time_series",
+          "query": "SELECT MAX(OT) FROM transformer_oil",
+          "rawQuery": true
+        }
+      ],
+      "title": "最高油温",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "influxdb",
+        "uid": "bfqa6sfx2lwxsa"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "decimals": 1,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "blue",
+                "value": null
+              },
+              {
+                "color": "green",
+                "value": -2
+              },
+              {
+                "color": "orange",
+                "value": 40
+              }
+            ]
+          },
+          "unit": "celsius"
+        }
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 3,
+        "x": 6,
+        "y": 30
+      },
+      "id": null,
+      "targets": [
+        {
+          "format": "time_series",
+          "query": "SELECT MIN(OT) FROM transformer_oil",
+          "rawQuery": true
+        }
+      ],
+      "title": "最低油温",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "influxdb",
+        "uid": "bfqa6sfx2lwxsa"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "purple",
+            "mode": "fixed"
+          },
+          "decimals": 0,
+          "unit": "none"
+        }
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 3,
+        "x": 9,
+        "y": 30
+      },
+      "id": null,
+      "targets": [
+        {
+          "format": "time_series",
+          "query": "SELECT count(OT) FROM transformer_oil",
+          "rawQuery": true
+        }
+      ],
+      "title": "变压器数据总量",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "influxdb",
+        "uid": "bfqa6sfx2lwxsa"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "lineInterpolation": "smooth",
+            "lineWidth": 1,
+            "showPoints": "never"
+          },
+          "decimals": 1,
+          "unit": "celsius"
+        }
+      },
+      "gridPos": {
+        "h": 10,
+        "w": 16,
+        "x": 0,
+        "y": 34
+      },
+      "id": null,
+      "targets": [
+        {
+          "alias": "m1 油温",
+          "format": "time_series",
+          "query": "SELECT OT FROM transformer_oil WHERE region='m1'",
+          "rawQuery": true
+        },
+        {
+          "alias": "m2 油温",
+          "format": "time_series",
+          "query": "SELECT OT FROM transformer_oil WHERE region='m2'",
+          "rawQuery": true
+        }
+      ],
+      "title": "变压器油温趋势（m1 / m2 对比）",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "influxdb",
+        "uid": "bfqa6sfx2lwxsa"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "lineInterpolation": "smooth",
+            "lineWidth": 1,
+            "showPoints": "never"
+          }
+        }
+      },
+      "gridPos": {
+        "h": 10,
+        "w": 8,
+        "x": 16,
+        "y": 34
+      },
+      "id": null,
+      "targets": [
+        {
+          "alias": "油温(OT)",
+          "format": "time_series",
+          "query": "SELECT OT FROM transformer_oil WHERE region='m1'",
+          "rawQuery": true
+        },
+        {
+          "alias": "高负载(HUFL)",
+          "format": "time_series",
+          "query": "SELECT HUFL FROM transformer_oil WHERE region='m1'",
+          "rawQuery": true
+        }
+      ],
+      "title": "油温与负载关系",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "influxdb",
+        "uid": "bfqa6sfx2lwxsa"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "decimals": 1,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "orange",
+                "value": 25
+              },
+              {
+                "color": "red",
+                "value": 40
+              }
+            ]
+          },
+          "unit": "celsius"
+        }
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 12,
+        "x": 0,
+        "y": 44
+      },
+      "id": null,
+      "targets": [
+        {
+          "format": "time_series",
+          "query": "SELECT MEAN(OT) FROM transformer_oil GROUP BY region",
+          "rawQuery": true
+        }
+      ],
+      "title": "各区域变压器平均油温",
+      "type": "bargauge"
+    }
+  ],
+  "refresh": "30s",
+  "schemaVersion": 38,
+  "tags": [
+    "industrial",
+    "datacenter",
+    "cooling"
+  ],
+  "time": {
+    "from": "2016-01-01T00:00:00.000Z",
+    "to": "2026-06-30T00:00:00.000Z"
+  },
+  "timezone": "asia/shanghai",
+  "title": "数据中心冷源监控大屏",
+  "uid": "ahkcv8",
+  "version": 6
+}
