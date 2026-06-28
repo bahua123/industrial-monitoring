@@ -3,6 +3,8 @@
 基于 InfluxDB v1 + Grafana + Mosquitto（TIG 栈）的工业温度监控方案，
 支持实时异常检测与多渠道告警推送。
 
+![仪表盘预览](dashboard.png)
+
 ## 架构
 
 ```
