@@ -4,7 +4,7 @@
     {
       "datasource": {
         "type": "influxdb",
-        "uid": "bfqa6sfx2lwxsa"
+        "uid": "influxdb-1"
       },
       "fieldConfig": {
         "defaults": {
@@ -51,7 +51,7 @@
     {
       "datasource": {
         "type": "influxdb",
-        "uid": "bfqa6sfx2lwxsa"
+        "uid": "influxdb-1"
       },
       "fieldConfig": {
         "defaults": {
@@ -98,7 +98,7 @@
     {
       "datasource": {
         "type": "influxdb",
-        "uid": "bfqa6sfx2lwxsa"
+        "uid": "influxdb-1"
       },
       "fieldConfig": {
         "defaults": {
@@ -145,7 +145,7 @@
     {
       "datasource": {
         "type": "influxdb",
-        "uid": "bfqa6sfx2lwxsa"
+        "uid": "influxdb-1"
       },
       "fieldConfig": {
         "defaults": {
@@ -175,7 +175,7 @@
     {
       "datasource": {
         "type": "influxdb",
-        "uid": "bfqa6sfx2lwxsa"
+        "uid": "influxdb-1"
       },
       "fieldConfig": {
         "defaults": {
@@ -224,7 +224,7 @@
     {
       "datasource": {
         "type": "influxdb",
-        "uid": "bfqa6sfx2lwxsa"
+        "uid": "influxdb-1"
       },
       "fieldConfig": {
         "defaults": {
@@ -266,7 +266,7 @@
     {
       "datasource": {
         "type": "influxdb",
-        "uid": "bfqa6sfx2lwxsa"
+        "uid": "influxdb-1"
       },
       "fieldConfig": {
         "defaults": {
@@ -310,7 +310,7 @@
     {
       "datasource": {
         "type": "influxdb",
-        "uid": "bfqa6sfx2lwxsa"
+        "uid": "influxdb-1"
       },
       "fieldConfig": {
         "defaults": {
@@ -369,7 +369,7 @@
     {
       "datasource": {
         "type": "influxdb",
-        "uid": "bfqa6sfx2lwxsa"
+        "uid": "influxdb-1"
       },
       "fieldConfig": {
         "defaults": {
@@ -397,7 +397,7 @@
     {
       "datasource": {
         "type": "influxdb",
-        "uid": "bfqa6sfx2lwxsa"
+        "uid": "influxdb-1"
       },
       "fieldConfig": {
         "defaults": {
@@ -443,7 +443,7 @@
     {
       "datasource": {
         "type": "influxdb",
-        "uid": "bfqa6sfx2lwxsa"
+        "uid": "influxdb-1"
       },
       "fieldConfig": {
         "defaults": {
@@ -489,7 +489,7 @@
     {
       "datasource": {
         "type": "influxdb",
-        "uid": "bfqa6sfx2lwxsa"
+        "uid": "influxdb-1"
       },
       "fieldConfig": {
         "defaults": {
@@ -535,7 +535,7 @@
     {
       "datasource": {
         "type": "influxdb",
-        "uid": "bfqa6sfx2lwxsa"
+        "uid": "influxdb-1"
       },
       "fieldConfig": {
         "defaults": {
@@ -583,7 +583,7 @@
     {
       "datasource": {
         "type": "influxdb",
-        "uid": "bfqa6sfx2lwxsa"
+        "uid": "influxdb-1"
       },
       "fieldConfig": {
         "defaults": {
@@ -631,7 +631,7 @@
     {
       "datasource": {
         "type": "influxdb",
-        "uid": "bfqa6sfx2lwxsa"
+        "uid": "influxdb-1"
       },
       "fieldConfig": {
         "defaults": {
@@ -679,7 +679,7 @@
     {
       "datasource": {
         "type": "influxdb",
-        "uid": "bfqa6sfx2lwxsa"
+        "uid": "influxdb-1"
       },
       "fieldConfig": {
         "defaults": {
@@ -711,7 +711,7 @@
     {
       "datasource": {
         "type": "influxdb",
-        "uid": "bfqa6sfx2lwxsa"
+        "uid": "influxdb-1"
       },
       "fieldConfig": {
         "defaults": {
@@ -751,7 +751,7 @@
     {
       "datasource": {
         "type": "influxdb",
-        "uid": "bfqa6sfx2lwxsa"
+        "uid": "influxdb-1"
       },
       "fieldConfig": {
         "defaults": {
@@ -789,7 +789,7 @@
     {
       "datasource": {
         "type": "influxdb",
-        "uid": "bfqa6sfx2lwxsa"
+        "uid": "influxdb-1"
       },
       "fieldConfig": {
         "defaults": {

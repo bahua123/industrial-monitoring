@@ -11,7 +11,8 @@ import datetime
 import sys
 import os
 
-INFLUX_URL = "http://127.0.0.1:8086/query?db=factory_monitoring"
+INFLUX_HOST = os.environ.get("INFLUX_HOST", "127.0.0.1:8086")
+INFLUX_URL = f"http://{INFLUX_HOST}/query?db=factory_monitoring"
 
 # ============================================================
 # 第一层：固定阈值规则
